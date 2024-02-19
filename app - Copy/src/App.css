@@ -1,0 +1,178 @@
+
+*{
+  font-family: "Roboto", sans-serif;
+  
+}
+
+.navC{
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  
+}
+
+.lien{
+  display: flex;
+  flex: 9;
+  justify-content: center ;
+}
+
+a{
+  text-decoration: none;
+  height:fit-content; width: 100%;
+  color: #221E20;
+  margin:10px ; 
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 400;
+  font-style: normal;
+  transition: background-color 0.3s ease;
+}
+li{
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+ a:hover{
+  background-color: #6C2243 ;
+  color:white ;
+}
+
+#Logo{
+  height: 70px;
+  
+}
+
+.titre{
+  flex: 11;
+  margin-left: 10px;
+}
+.search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
+}
+
+.button{
+  background-color:transparent;
+  border: none;
+ 
+}
+.button img {
+  display: block;
+  width: 100%; 
+  height: auto; 
+  border-radius: inherit; 
+
+}
+
+.active a {
+  background-color: #6C2243 ;
+  color:white ;
+}
+
+
+.searchInput{
+  display: flex;
+  justify-content: center;
+
+}
+
+.nav{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+ 
+
+
+}
+.searchInput input {
+  width: 40vw;
+  height: 40px;
+  background-color: #DCEEFB;
+  margin: 20px;
+  border-radius: 10px;
+  border: none;
+ 
+  
+
+}
+.closeIN{
+  display: none;
+
+  
+  
+}
+
+.activeIN{
+    display:block ;
+}
+
+
+
+      /* home page  */
+.Home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 200px 0px 200px;
+}
+
+.Left{
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.Right{
+  flex: 2;
+  display: flex;
+  justify-content:flex-end;
+  
+}
+
+.Left * {
+  margin: 20px;
+}
+
+.Right img {
+  height:495px ;
+}
+.Left h1 {
+  color: #015699;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 60px;
+}
+
+.Left h2 {
+ color: #221E20;
+ font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.Left h3 {
+color: #221E20;
+font-size: 12px;
+font-family: "Poppins", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.Left button {
+  background-color: #6C2243;
+  font-size: 15px;
+  color: white;
+  height: 50px;
+  width: 200px;
+  border: none;
+  border-radius: 0px 38px ;
+
+}
