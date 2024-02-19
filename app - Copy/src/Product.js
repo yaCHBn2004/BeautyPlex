@@ -22,7 +22,7 @@ const Product = () => {
                         <div className="desc">
                             <h1>{productItem.title}</h1>
                             <p>{productItem.price}</p>
-                            <p>hello </p>
+                            <button> buy it </button>
                         </div>
 
                     </>
