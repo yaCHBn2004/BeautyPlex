@@ -4,6 +4,7 @@ import Nav from './Nav';
 import Home from './Home';
 import { useNavigate } from "react-router-dom";
 import Forme from './Forme';
+import Product from './Product';
 function App() {
   return (
     <div className="App">
@@ -14,6 +15,7 @@ function App() {
       
        <Nav></Nav>
        <Home></Home>
+       <Product></Product>
       
        
        

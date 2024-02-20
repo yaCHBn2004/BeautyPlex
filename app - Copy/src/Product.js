@@ -5,8 +5,10 @@ import { useNavigate } from "react-router-dom";
 const Product = () => {
     const navigate = useNavigate(); 
 
-    const handleBuyClick = (productId) => {
-        navigate(`/forme/${productId}`); 
+    const handleBuyClick = (productId, productTitle, productPrice, productImg) => {
+        const productInfo = { id: productId, title: productTitle, price: productPrice, imgUrl: productImg };
+    localStorage.setItem("productInfo", JSON.stringify(productInfo));
+        navigate("/forme"); 
     };
 
   const [Products, setproducts] = useState([
@@ -54,7 +56,7 @@ const Product = () => {
           <div className="desc">
             <h1>{productItem.title}</h1>
             <p>{productItem.price}</p>
-            <button onClick={() => handleBuyClick(productItem.id)}>
+            <button onClick={() => handleBuyClick(productItem.id,productItem.title,productItem.price,productItem.imgUrl)}>
               Buy Now
             </button>
           </div>
