@@ -24,16 +24,17 @@ class UserInfo(BaseModel):
     name: str
     email: str
     city: str
+    baladiya: str
+    phoneNum: int
 
 class ProductInfo(BaseModel):
-    id: int
     title: str
     price: float
+    imgUrl: str
 
 @app.post("/submit-form/")
 async def submit_form(user_info: UserInfo, product_info: ProductInfo):
     try:
-        
         send_email(user_info, product_info)
     except ValidationError as e:
         raise HTTPException(status_code=422, detail=str(e))
@@ -59,11 +60,13 @@ def send_email(user_info: UserInfo, product_info: ProductInfo):
     Name: {user_info.name}
     Email: {user_info.email}
     City: {user_info.city}
+    Phone: {user_info.phoneNum}
+    Baladiya: {user_info.baladiya}
 
     Product Info:
-    id: {product_info.id}
     Title: {product_info.title}
     Price: {product_info.price}
+    Image URL: {product_info.imgUrl}
     """
 
     message.attach(MIMEText(email_body, 'plain'))
