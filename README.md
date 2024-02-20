@@ -1,2 +1,2 @@
 # BeautyPlex
-single page front-end with react 
+our E-commerce App using React and fastApi 
