@@ -300,7 +300,8 @@ font-style: normal;
 
 }
 
-.footer li{
+.footer a{
+  color: white;
   list-style: none;
   text-align: right;
   text-decoration: none;
