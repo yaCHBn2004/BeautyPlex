@@ -3,48 +3,68 @@ from pydantic import BaseModel
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
+origins = [
+    "http://localhost",
+    "http://localhost:3000",  
+]
+
+#
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"],
+)
 
 class UserInfo(BaseModel):
     name: str
     email: str
+    city: str
+
+class ProductInfo(BaseModel):
+    id: int
+    title: str
+    price: float
+    
 
 @app.post("/submit-form/")
-async def submit_form(user_info: UserInfo = Form(...)):
-    # Process the form data (e.g., save to database, send email, etc.)
-    send_email(user_info)
+async def submit_form(user_info: UserInfo, product_info: ProductInfo):
+    send_email(user_info, product_info)
     return {"message": "Form submitted successfully"}
 
-def send_email(user_info: UserInfo):
-    # Setup SMTP parameters
-    smtp_host = 'your_smtp_host'
+def send_email(user_info: UserInfo, product_info: ProductInfo):
+    smtp_host = 'smtp.gmail.com'
     smtp_port = 587
-    smtp_user = 'your_smtp_user'
-    smtp_pass = 'your_smtp_password'
-    sender_email = 'your_sender_email'
-    receiver_email = 'adjissifatimaamina@gmial.com'
+    smtp_user ='f_adjissi@estin.dz'  
+    smtp_pass = 'sama7niyaraby'  
+    sender_email = smtp_user
+    receiver_email ='f_adjissi@estin.dz'   # Email address where you want to receive notifications
 
-    # Create the message
     message = MIMEMultipart()
     message['From'] = sender_email
     message['To'] = receiver_email
     message['Subject'] = 'New Form Submission'
 
-    # Construct the email body
     email_body = f"""
     New Form Submission:
     Name: {user_info.name}
     Email: {user_info.email}
+    City: {user_info.city}
+
+    Product Info:
+    id: {product_info.id}
+    Title: {product_info.title}
+    Price: {product_info.price}
     """
 
-    # Attach the email body
     message.attach(MIMEText(email_body, 'plain'))
 
-    # Connect to SMTP server and send email
     with smtplib.SMTP(smtp_host, smtp_port) as server:
         server.starttls()
         server.login(smtp_user, smtp_pass)
         server.send_message(message)
-
-    # Alternatively, you can use try-except to handle SMTP exceptions

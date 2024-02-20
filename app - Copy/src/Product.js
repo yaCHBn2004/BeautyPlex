@@ -3,13 +3,22 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Product = () => {
-    const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
-    const handleBuyClick = (productId, productTitle, productPrice, productImg) => {
-        const productInfo = { id: productId, title: productTitle, price: productPrice, imgUrl: productImg };
-    localStorage.setItem("productInfo", JSON.stringify(productInfo));
-        navigate("/forme"); 
+  const handleBuyClick = (
+    productId,
+    productTitle,
+    productPrice,
+    
+  ) => {
+    const productInfo = {
+      id: productId,
+      title: productTitle,
+      price: productPrice,
     };
+    localStorage.setItem("productInfo", JSON.stringify(productInfo));
+    navigate("/forme");
+  };
 
   const [Products, setproducts] = useState([
     {
@@ -56,7 +65,16 @@ const Product = () => {
           <div className="desc">
             <h1>{productItem.title}</h1>
             <p>{productItem.price}</p>
-            <button onClick={() => handleBuyClick(productItem.id,productItem.title,productItem.price,productItem.imgUrl)}>
+            <button
+              onClick={() =>
+                handleBuyClick(
+                  productItem.id,
+                  productItem.title,
+                  productItem.price,
+                  
+                )
+              }
+            >
               Buy Now
             </button>
           </div>
@@ -67,5 +85,3 @@ const Product = () => {
 };
 
 export default Product;
-
-  

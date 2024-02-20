@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios'; // Import Axios for making HTTP requests
 
 const cities = [
   'Algiers',
@@ -12,11 +13,17 @@ const Forme = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
+  const productInfo = JSON.parse(localStorage.getItem('productInfo')); 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => { 
     e.preventDefault();
-    console.log('Submitted:', { name, email, selectedCity });
-    // You can add your logic here to handle form submission
+    try {
+      const formData = { name, email, selectedCity, productInfo }; // Include product info in the form data
+      const response = await axios.post('http://127.0.0.1:8000/submit-form/', formData); // Change URL to match your FastAPI server
+      console.log('Form submitted successfully:', response.data);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   return (
