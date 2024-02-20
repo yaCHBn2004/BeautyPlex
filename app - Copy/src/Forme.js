@@ -1,25 +1,42 @@
-import React, { useState } from 'react';
-import axios from 'axios'; // Import Axios for making HTTP requests
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const cities = [
-  'Algiers',
-  'Oran',
-  'Constantine',
-  'Annaba',
-  // Add more cities here...
-];
+const cities = ['Algiers', 'Oran', 'Constantine', 'Annaba'];
 
 const Forme = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [selectedCity, setSelectedCity] = useState('');
-  const productInfo = JSON.parse(localStorage.getItem('productInfo')); 
+  const [city, setCity] = useState('');
+  const [productId, setProductId] = useState(0);
+  const [productTitle, setProductTitle] = useState('');
+  const [productPrice, setProductPrice] = useState(0);
 
-  const handleSubmit = async (e) => { 
+  useEffect(() => {
+    const storedProductInfo = localStorage.getItem('productInfo');
+    if (storedProductInfo) {
+      const productInfo = JSON.parse(storedProductInfo);
+      setProductId(productInfo.id);
+      setProductTitle(productInfo.title);
+      setProductPrice(productInfo.price);
+    }
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const formData = { name, email, selectedCity, productInfo }; // Include product info in the form data
-      const response = await axios.post('http://127.0.0.1:8000/submit-form/', formData); // Change URL to match your FastAPI server
+      const formData = {
+        user_info: {
+          name,
+          email,
+          city,
+        },
+        product_info: {
+          id: productId,
+          title: productTitle,
+          price: productPrice,
+        },
+      };
+      const response = await axios.post('http://127.0.0.1:8000/submit-form/', formData);
       console.log('Form submitted successfully:', response.data);
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -52,8 +69,8 @@ const Forme = () => {
         <label htmlFor="city">City:</label>
         <select
           id="city"
-          value={selectedCity}
-          onChange={(e) => setSelectedCity(e.target.value)}
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
           required
         >
           <option value="">Select a city</option>

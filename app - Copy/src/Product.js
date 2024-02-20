@@ -7,14 +7,16 @@ const Product = () => {
 
   const handleBuyClick = (
     productId,
-    productTitle,
     productPrice,
+    productTitle,
+    
     
   ) => {
     const productInfo = {
       id: productId,
-      title: productTitle,
       price: productPrice,
+      title: productTitle,
+      
     };
     localStorage.setItem("productInfo", JSON.stringify(productInfo));
     navigate("/forme");
@@ -69,8 +71,9 @@ const Product = () => {
               onClick={() =>
                 handleBuyClick(
                   productItem.id,
-                  productItem.title,
                   productItem.price,
+                  productItem.title,
+                  
                   
                 )
               }
