@@ -16,6 +16,11 @@ function App() {
        <Nav></Nav>
        <Home></Home>
        <Product></Product>
+       <div>
+        hiiiiiiiii 
+        hiii 
+        
+       </div>
       
        
        

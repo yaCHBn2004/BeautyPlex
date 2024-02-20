@@ -20,7 +20,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Define Pydantic models for user info and product info
 class UserInfo(BaseModel):
     name: str
     email: str
@@ -31,15 +30,12 @@ class ProductInfo(BaseModel):
     title: str
     price: float
 
-# Endpoint to handle form submission
 @app.post("/submit-form/")
 async def submit_form(user_info: UserInfo, product_info: ProductInfo):
     try:
-        # No need to manually call validate() on Pydantic models
-        # If data doesn't match the model schema, FastAPI will automatically raise a ValidationError
+        
         send_email(user_info, product_info)
     except ValidationError as e:
-        # If validation fails, return a 422 Unprocessable Entity error with the details
         raise HTTPException(status_code=422, detail=str(e))
 
     return {"message": "Form submitted successfully"}
@@ -51,8 +47,8 @@ def send_email(user_info: UserInfo, product_info: ProductInfo):
     smtp_user = 'f_adjissi@estin.dz'
     smtp_pass = 'sama7niyaraby'
     sender_email = smtp_user
-    receiver_email = 'f_adjissi@estin.dz'  # Email address where you want to receive notifications
-
+    receiver_email = 'f_adjissi@estin.dz'  
+    
     message = MIMEMultipart()
     message['From'] = sender_email
     message['To'] = receiver_email
