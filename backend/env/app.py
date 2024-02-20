@@ -36,6 +36,7 @@ class ProductInfo(BaseModel):
 async def submit_form(user_info: UserInfo, product_info: ProductInfo):
     send_email(user_info, product_info)
     return {"message": "Form submitted successfully"}
+    
 
 def send_email(user_info: UserInfo, product_info: ProductInfo):
     smtp_host = 'smtp.gmail.com'
