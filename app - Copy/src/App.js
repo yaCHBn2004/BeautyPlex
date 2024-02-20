@@ -2,7 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import Nav from './Nav';
 import Home from './Home';
+import { useNavigate } from "react-router-dom";
 import Product from './Product';
+import Forme from './Forme';
 function App() {
   return (
     <div className="App">
@@ -13,7 +15,8 @@ function App() {
       
        <Nav></Nav>
        <Home></Home>
-       <Product></Product>
+       <Forme></Forme>
+       
        
       
     </div>

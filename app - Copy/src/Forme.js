@@ -8,7 +8,7 @@ const cities = [
   // Add more cities here...
 ];
 
-const Form = () => {
+const Forme = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
@@ -62,4 +62,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Forme;
