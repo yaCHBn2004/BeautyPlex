@@ -6,7 +6,7 @@ const Nav = ({ scrollToSection }) => {
 
   const handleLinkState = (link) => {
     setLinkState(link);
-    scrollToSection(link); // Scroll to corresponding section
+    scrollToSection(link); 
   };
 
   const handleSearch = () => {
