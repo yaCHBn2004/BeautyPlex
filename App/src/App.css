@@ -291,7 +291,7 @@ font-style: normal;
 
 .footer ul{
   display: flex;
-  
+  color: white;
   flex-direction: column;
   gap: 20px;
   list-style: none;
@@ -299,18 +299,15 @@ font-style: normal;
   margin: 0;
 
 }
+
 .footer li{
+  list-style: none;
   text-align: right;
   text-decoration: none;
   cursor: pointer;
  
 }
-.footer li:hover{
-  color: #8674b9;
-}
-footer p{
-  align-items: center;
-  
-}
+
+
 
 

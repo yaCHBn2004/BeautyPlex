@@ -31,15 +31,15 @@ function Footer({ scrollToSection }) {
         </h4>
         
       </div>
-      <div>
-      <ul className="footerlist">
-      <li className={linkState === 'home' ? 'active' : ''}><a onClick={() => { handleLinkState("home"); scrollToTop(); }}>Accueil</a></li>
-          <li className={linkState === 'product' ? 'active' : ''}><a onClick={() => {handleLinkState('product');scrollTopro();}}>Produit</a></li>
-          <li className={linkState === 'about' ? 'active' : ''}><a onClick={() => handleLinkState('about')}>À propos</a></li>
-          <li className={linkState === 'contact' ? 'active' : ''}><a href="mailto:Bioplexbioplex@gmail.com">Contact</a></li>
+      
+      <ul >
+      <li ><a onClick={() => { handleLinkState("home"); scrollToTop(); }}>Accueil</a></li>
+          <li ><a onClick={() => {handleLinkState('product');scrollTopro();}}>Produit</a></li>
+          <li ><a onClick={() => handleLinkState('about')}>À propos</a></li>
+          <li ><a href="mailto:Bioplexbioplex@gmail.com">Contact</a></li>
 
         </ul>
-      </div>
+    
 
       
       
