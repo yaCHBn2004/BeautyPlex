@@ -1,6 +1,20 @@
 import React, { useState } from "react";
 
 const Nav = ({ scrollToSection }) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" 
+    });
+  };
+  const scrollTopro  = () => {
+    const windowHeight = window.innerHeight;
+    const middle = windowHeight / 2;
+    window.scrollTo({
+      top: middle,
+      behavior: "smooth"
+    });
+  };
   const [linkState, setLinkState] = useState('home');
   const [search, activateSearch] = useState(false);
 
@@ -20,9 +34,10 @@ const Nav = ({ scrollToSection }) => {
           <img id="Logo" src="./logo.png" alt="Description of the image" /> 
         </div>
         <ul className="lien">
-          <li className={linkState === 'home' ? 'active' : ''}><a onClick={() => handleLinkState('home')}>Home</a></li>
-          <li className={linkState === 'product' ? 'active' : ''}><a onClick={() => handleLinkState('product')}>Product</a></li>
-          <li className={linkState === 'about' ? 'active' : ''}><a onClick={() => handleLinkState('about')}>About</a></li>
+          <li className={linkState === 'home' ? 'active' : ''}><a onClick={() => { handleLinkState("home"); scrollToTop(); }}>Accueil</a></li>
+          <li className={linkState === 'product' ? 'active' : ''}><a onClick={() => {handleLinkState('product');scrollTopro();}}>Produit</a></li>
+          <li className={linkState === 'about' ? 'active' : ''}><a onClick={() => handleLinkState('about')}>À propos</a></li>
+          <li  className={linkState === 'contact' ? 'active' : ''}><a href="mailto:Bioplexbioplex@gmail.com">Contact</a></li>
         </ul>
         <div className="search">
           <button className="button" onClick={handleSearch}>

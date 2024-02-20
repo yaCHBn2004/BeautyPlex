@@ -6,6 +6,7 @@ import Product from './Product';
 import Footer from "./Footer";
 
 function App() {
+  
   const homeRef = useRef(null);
   const productRef = useRef(null);
   const contactRef = useRef(null);
@@ -26,9 +27,9 @@ function App() {
       <div ref={productRef}>
         <Product />
       </div>
-      <div >
-        <Footer />
-      </div>
+      
+      <Footer scrollToSection={scrollToSection} />
+      
     </div>
   );
 }
