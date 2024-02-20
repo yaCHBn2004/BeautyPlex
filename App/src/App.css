@@ -1,13 +1,13 @@
-body{
-  
-}
+
 *{
   font-family: "Roboto", sans-serif;
-  
+  margin: auto;
+  box-sizing: border-box;
   
 }
 /* --------------------------------------navbar------------------------------------------------------------- */
 .navC{
+  width: 100%;
   display: flex;
   padding: 10px;
   align-items: center;
@@ -266,7 +266,6 @@ font-style: normal;
   
 
 }
-/* --------------------------------------Order Form------------------------------------------------------------- */
 
 
 .OrderForm{
@@ -276,3 +275,40 @@ font-style: normal;
 .OrderForm h1 {
   padding: 300px;
 }
+/* --------------------------------------footer------------------------------------------------------------- */
+.footer{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6C2243;
+  color: white;
+  height: 280px;
+  width: 100%;
+}
+
+.footer ul{
+  display: flex;
+  
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+.footer li{
+  text-align: right;
+  text-decoration: none;
+  cursor: pointer;
+ 
+}
+.footer li:hover{
+  color: #8674b9;
+}
+footer p{
+  align-items: center;
+  top: 90%;
+}
+
+

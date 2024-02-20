@@ -23,7 +23,6 @@ const Nav = ({ scrollToSection }) => {
           <li className={linkState === 'home' ? 'active' : ''}><a onClick={() => handleLinkState('home')}>Home</a></li>
           <li className={linkState === 'product' ? 'active' : ''}><a onClick={() => handleLinkState('product')}>Product</a></li>
           <li className={linkState === 'about' ? 'active' : ''}><a onClick={() => handleLinkState('about')}>About</a></li>
-          <li className={linkState === 'contact' ? 'active' : ''}><a onClick={() => handleLinkState('contact')}>Contact Us</a></li>
         </ul>
         <div className="search">
           <button className="button" onClick={handleSearch}>

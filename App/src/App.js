@@ -3,10 +3,12 @@ import './App.css';
 import Nav from './Nav';
 import Home from './Home';
 import Product from './Product';
+import Footer from "./Footer";
 
 function App() {
   const homeRef = useRef(null);
   const productRef = useRef(null);
+  const contactRef = useRef(null);
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -23,6 +25,9 @@ function App() {
       </div>
       <div ref={productRef}>
         <Product />
+      </div>
+      <div >
+        <Footer />
       </div>
     </div>
   );
