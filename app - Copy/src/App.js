@@ -3,7 +3,6 @@ import './App.css';
 import Nav from './Nav';
 import Home from './Home';
 import { useNavigate } from "react-router-dom";
-import Product from './Product';
 import Forme from './Forme';
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
       
        <Nav></Nav>
        <Home></Home>
-       <Forme></Forme>
+      
        
        
       
