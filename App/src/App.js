@@ -12,7 +12,12 @@ function App() {
       <Nav />
       
         <Home />
-          
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+
       <Footer />
       
     </div>

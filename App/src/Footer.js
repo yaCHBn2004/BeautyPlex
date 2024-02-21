@@ -34,8 +34,9 @@ function Footer() {
 
       <div>
       <p>© BEAUTYPLEX. All Rights Reserved 2024</p>
-      <a href="https://www.facebook.com/your-facebook-page"><FontAwesomeIcon icon={faFacebook} /></a>
-        <a href="https://www.instagram.com/your-instagram-page"><FontAwesomeIcon icon={faInstagram} /></a>
+      <br></br>
+      <a href="https://www.facebook.com/profile.php?id=61550788340750"><FontAwesomeIcon icon={faFacebook} /></a>
+        <a href="https://www.instagram.com/beautyplexdz/"><FontAwesomeIcon icon={faInstagram} /></a>
       </div>
       
       
