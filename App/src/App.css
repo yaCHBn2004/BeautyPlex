@@ -1,146 +1,272 @@
+.App {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  height: 100%;
+}
 
-*{
-  font-family: "Roboto", sans-serif;
-  margin: auto;
+body {
   box-sizing: border-box;
+  margin: auto;
   
 }
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 /* --------------------------------------navbar------------------------------------------------------------- */
-.navC{
-  width: 100%;
+.navC {
   display: flex;
   padding: 10px;
   align-items: center;
-  
 }
 
-.lien{
+.lien {
   display: flex;
   flex: 9;
-  justify-content: center ;
+  justify-content: center;
+  align-items: center;
 }
 
-a{
-  cursor: pointer;
+.lienLarge {
+  display: flex;
+  flex: 9;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
   text-decoration: none;
-  height:fit-content; width: 100%;
-  color: #221E20;
-  margin:10px ; 
+  height: fit-content;
+  width: 100%;
+  color: #221e20;
+  margin: 10px;
   padding: 10px;
   border-radius: 10px;
   font-weight: 400;
   font-style: normal;
   transition: background-color 0.3s ease;
 }
-li{
+
+li {
   list-style: none;
   align-items: center;
   justify-content: center;
-  
-  
 }
 
- a:hover{
-  background-color: #922053 ;
-  color:white ;
+a:hover {
+  background-color: #922053;
+  color: white;
 }
 
-#Logo{
-  height: 70px;
-  
+#Logo {
+  max-height: 70px;
+  min-height: 40px;
 }
 
-.titre{
+ .res-nav  {
+  height: 26px;
+  display: none;
+  margin: 10px;
+  background-color: transparent;
+  border: none;
+}
+#res-nav{
+  height: 100%;
+}
+
+
+
+.titre {
   flex: 11;
   margin-left: 10px;
 }
-.search{
+
+.search {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 2;
 }
 
-.button{
-  background-color:transparent;
+.button {
+  background-color: transparent;
   border: none;
   padding: 0px;
- 
 }
+
 .button img {
   display: block;
-  width: 100%; 
-  height: auto; 
-  border-radius: inherit; 
-
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
 }
 
 .active a {
-  background-color: #6C2243 ;
-  color:white ;
+  background-color: #6c2243;
+  color: white;
 }
 
-
-.searchInput{
+.searchInput {
   display: flex;
   justify-content: center;
-
 }
 
-.nav{
+.nav {
   display: flex;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
-  
-
-
+  width: 100vw;
 }
+
 .searchInput input {
   width: 40vw;
   height: 40px;
-  background-color: #DCEEFB;
+  background-color: #dceefb;
   margin: 20px;
   border-radius: 10px;
   border: none;
- 
-  
-
 }
-.closeIN{
+
+.closeIN {
   display: none;
-
-  
-  
 }
 
-.activeIN{
-    display:block ;
+.activeIN {
+  display: block;
 }
 
+/* --------------------------------------Responsive ------------------------------------------------------------ */
 
+@media only screen and (max-width: 1200px) {
+  .lienLarge li a {
+    font-size: 12px;
+  }
+
+  nav .titre img {
+    width: 20vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #resToff{
+    display: none;
+
+  }
+  
+  .lien{
+    position: relative;
+  }
+  #resTon{
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    align-items: baseline;
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    background-color: #1a1a1ae1;
+    height: 100vh;
+    width: 40vw;
+  }
+#resTon li {
+  margin: 10px;
+  padding-top: 20px;
+}
+#resTon li a{
+   color: white;
+}
+
+ 
+  .lienLarge {
+    display: none;
+  }
+
+.res-nav {
+    display: inline-block;
+  }
+ 
+
+  .lien {
+    justify-content: end;
+  }
+
+  h1 {
+    color: #221e20;
+  }
+
+  .Home .Left h1 {
+    font-size: 45px;
+  }
+
+  .Home .Left h2 {
+    font-size: 16px;
+  }
+
+  .Home .Left h3 {
+    font-size: 10px;
+  }
+
+  .Home .Right img {
+    height: 400px;
+  }
+
+  #Logo {
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  #Logo {
+    height: 5px;
+  }
+  
+  .Home {
+    flex-direction: column;
+  }
+  .Home .Right {
+    margin: 0px;
+  }
+  .Home .Right img {
+    min-height: 300px;
+    height: 80vw;
+  }
+
+
+  .Form{
+    flex-direction: column;
+  }
+  .Home .Right img {
+    display: none;
+  }
+}
 
 /* --------------------------------------landing page------------------------------------------------------------- */
-
-.Home{
+.home {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.Home {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px 200px 0px 200px;
-
+  max-width: 1000px;
+  width: 80vw;
 }
 
-.Left{
+.Left {
   flex: 6;
   display: flex;
   flex-direction: column;
-  
 }
 
-.Right{
+.Right {
   flex: 2;
   display: flex;
-  justify-content:flex-end;
-  
+  justify-content: flex-end;
 }
 
 .Left * {
@@ -148,8 +274,9 @@ li{
 }
 
 .Right img {
-  height:495px ;
+  height: 495px;
 }
+
 .Left h1 {
   color: #015699;
   font-family: "Poppins", sans-serif;
@@ -159,124 +286,190 @@ li{
 }
 
 .Left h2 {
- color: #221E20;
- font-family: "Poppins", sans-serif;
+  color: #221e20;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 20px;
 }
 
 .Left h3 {
-color: #221E20;
-font-size: 12px;
-font-family: "Poppins", sans-serif;
-font-weight: 400;
-font-style: normal;
+  color: #221e20;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-#ExploreProduct{
-  background-color: #6C2243;
+#ExploreProduct {
+  background-color: #6c2243;
   font-size: 15px;
-  cursor: pointer;
   color: white;
   height: 50px;
   width: 200px;
   border: none;
-  border-radius: 0px 38px ;
-
+  border-radius: 0px 38px;
 }
 
-#ExploreProduct:hover{
+#ExploreProduct:hover {
   background-color: #922053;
   font-weight: 700;
   padding: 5px;
   transition: background-color 0.4s ease;
-
 }
 
-/* --------------------------------------Product // home ------------------------------------------------------------- */
+/* --------------------------------------home ------------------------------------------------------------- */
 
-
-.ProductItem{
+.ProductItem {
   display: flex;
-  cursor: pointer;
   flex-direction: column;
   border-radius: 10px;
-  width: 20% ; 
-  min-width: 249px;
-  background-color: #FBFBFB;
+  width: 20%;
+  max-width: 300px;
+  min-width: 260px;
+  background-color: #fbfbfb;
   margin: 50px;
   box-shadow: 2px 2px 4px 2px #5762621a;
 }
+
 .ProductItem .desc {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .ProductItem h1 {
-   font-size: 12px;
-   width:80%;
-   margin-bottom:0 ;
-   color: #221E20;
-   font-family: "Poppins", sans-serif;
-   font-weight: 700;
-   font-style: normal;
+  font-size: 12px;
+  width: 80%;
+  margin-bottom: 0;
+  color: #221e20;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .ProductItem P {
   font-size: 12px;
-   margin: 10px;
-  color: #6C2243;
+  margin: 10px;
+  color: #6c2243;
   font-family: "Poppins", sans-serif;
-   font-weight: 700;
-   font-style: normal;
+  font-weight: 700;
+  font-style: normal;
 }
+
 #ProductImg {
   width: 100%;
   height: auto;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .product {
   display: flex;
-  flex-wrap:wrap ; 
+  flex-wrap: wrap;
   justify-content: center;
-  
-  
 }
-.Product{
+
+.Product {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  width: 100vw;
   overflow-y: scroll;
-  background-image: linear-gradient(to bottom right, #DCEEFB, #ffffff);
+  background-image: linear-gradient(to bottom right, #dceefb, #ffffff);
+  margin-top: 100px;
 }
+
 .Product h1 {
-  color: #6C2243;
+  color: #6c2243;
   padding: 20px;
 }
 
 #ClickProduct {
   transition: background-color 0.4s ease;
   border-radius: 10px;
-
+  border: none;
+  margin: 0px;
 }
+
 #ClickProduct:hover {
-  background-color: #FBFBFB;
-  box-shadow: 2px 2px 4px 2px #99a9a923;
-  
-
+  background-color: #ffffff;
+  box-shadow: 2px 2px 20px #6efefe23;
 }
 
+/* --------------------------------------Order Form------------------------------------------------------------- */
 
-.OrderForm{
+.OrderForm {
   position: fixed;
-  
 }
+
 .OrderForm h1 {
   padding: 300px;
 }
-/* --------------------------------------footer------------------------------------------------------------- */
+
+/* --------------------------------------Form ------------------------------------------------------------- */
+
+.Form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100;
+}
+
+.Form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Form form input {
+  margin: 7px;
+  padding: 10px;
+  min-width: 250px;
+  border-radius: 10px;
+  background-color: #edf6fc;
+  border: none;
+}
+
+.Form form div select {
+  background-color: #221e20;
+  color: white;
+  border-radius: 10px;
+  min-width: 250px;
+  padding: 10px;
+  margin-top: 15px;
+  border: none;
+  width: 100%;
+}
+
+.Form form button {
+  background-color: #05e601;
+  border: none;
+  min-width: 100px;
+  width: 50%;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+}
+
+.Form form button:hover {
+  background-color: #03be00;
+}
+
+.Form .ProductItem {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.Form #ProductImg {
+  border-radius: 10px;
+}
+.Form .ProductItem p {
+  color: red;
+}
 .footer{
   padding: 20px;
   display: flex;
@@ -287,7 +480,7 @@ font-style: normal;
   height: 280px;
   width: 100%;
 }
-
+/* ------------foter ------------------*/
 .footer ul{
   display: flex;
   color: white;
