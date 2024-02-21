@@ -1,5 +1,8 @@
 import React,{ useState } from 'react';
 import { Link, useLocation } from 'react-router-dom'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
 
 function Footer() {
   const location = useLocation(); 
@@ -29,9 +32,13 @@ function Footer() {
         </ul>
     
 
-      
-      
+      <div>
       <p>© BEAUTYPLEX. All Rights Reserved 2024</p>
+      <a href="https://www.facebook.com/your-facebook-page"><FontAwesomeIcon icon={faFacebook} /></a>
+        <a href="https://www.instagram.com/your-instagram-page"><FontAwesomeIcon icon={faInstagram} /></a>
+      </div>
+      
+      
     </div>
     
   );
