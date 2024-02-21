@@ -1,8 +1,8 @@
 .App {
-  /* display: flex;
+   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; */
+  align-items: center; 
   height: 100%;
 }
 
@@ -119,6 +119,7 @@ a:hover {
   flex-direction: column;
   background-color: rgb(255, 255, 255);
   width: 100vw;
+  
 }
 
 .searchInput input {
@@ -318,7 +319,7 @@ a:hover {
   transition: background-color 0.4s ease;
 }
 
-/* --------------------------------------home ------------------------------------------------------------- */
+/* --------------------------------------product ------------------------------------------------------------- */
 
 .ProductItem {
   display: flex;
@@ -373,11 +374,10 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+
   width: 100vw;
-  overflow-y: scroll;
   background-image: linear-gradient(to bottom right, #dceefb, #ffffff);
-  margin-top: 100px;
+
 }
 
 .Product h1 {

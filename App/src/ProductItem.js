@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const ProductItem = ({ productItem }) => {
+const ProductItem = ({ productItem, key }) => {
   const navigate = useNavigate();
 
   const handleBuyClick = () => {
