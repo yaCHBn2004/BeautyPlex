@@ -250,7 +250,6 @@ font-style: normal;
   height: 100vh;
   overflow-y: scroll;
   background-image: linear-gradient(to bottom right, #DCEEFB, #ffffff);
-  margin-top: 100px;
 }
 .Product h1 {
   color: #6C2243;

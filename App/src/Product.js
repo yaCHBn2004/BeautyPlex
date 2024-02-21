@@ -1,5 +1,7 @@
 import { useState } from "react";
 import ProductItem from "./ProductItem";
+import Nav from "./Nav";
+import Footer from "./Footer";
 
 
 
@@ -62,7 +64,10 @@ const Product = () => {
     ]
      ) ; 
     return ( 
-        <div className="Product" >
+        <div>
+        <Nav></Nav>
+            <div className="Product" >
+            
             <h1>Notre Produits</h1>
         <div className="product">
 
@@ -79,6 +84,9 @@ const Product = () => {
             
         </div>
         </div>
+        <Footer></Footer>
+        </div>
+        
      );
 }
  

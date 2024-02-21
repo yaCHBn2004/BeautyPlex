@@ -1,24 +1,12 @@
 import React,{ useState } from 'react';
+import { Link, useLocation } from 'react-router-dom'; 
 
-function Footer({ scrollToSection }) {
-    const scrollToTop = () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth" 
-        });
-      };
-      const scrollTopro  = () => {
-        const windowHeight = window.innerHeight;
-        const middle = windowHeight / 2;
-        window.scrollTo({
-          top: middle,
-          behavior: "smooth"
-        });
-      };
+function Footer() {
+  const location = useLocation(); 
+
     const [linkState, setLinkState] = useState('home');
     const handleLinkState = (link) => {
         setLinkState(link);
-        scrollToSection(link); 
       };
   return (
     <div className='footer'>
@@ -33,9 +21,9 @@ function Footer({ scrollToSection }) {
       </div>
       
       <ul >
-      <li ><a onClick={() => { handleLinkState("home"); scrollToTop(); }}>Accueil</a></li>
-          <li ><a onClick={() => {handleLinkState('product');scrollTopro();}}>Produit</a></li>
-          <li ><a onClick={() => handleLinkState('about')}>À propos</a></li>
+      <li className={location.pathname === '/' ? 'active' : ''}><Link to="/">Accueil</Link></li>
+          <li className={location.pathname === '/products' ? 'active' : ''}><Link to="/products">Produit</Link></li>
+          <li className={location.pathname === '/about' ? 'active' : ''}><Link to="/about">À propos</Link></li>
           <li ><a href="mailto:Bioplexbioplex@gmail.com">Contact</a></li>
 
         </ul>
