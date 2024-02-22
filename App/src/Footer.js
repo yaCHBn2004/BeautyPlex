@@ -26,7 +26,6 @@ function Footer() {
       <ul >
       <li className={location.pathname === '/' ? 'active' : ''}><Link to="/">Accueil</Link></li>
           <li className={location.pathname === '/products' ? 'active' : ''}><Link to="/products">Produit</Link></li>
-          <li className={location.pathname === '/about' ? 'active' : ''}><Link to="/about">À propos</Link></li>
           <li ><a href="mailto:Bioplexbioplex@gmail.com">Contact</a></li>
 
         </ul>
@@ -35,8 +34,11 @@ function Footer() {
       <div>
       <p>© BEAUTYPLEX. All Rights Reserved 2024</p>
       <br></br>
-      <a href="https://www.facebook.com/profile.php?id=61550788340750"><FontAwesomeIcon icon={faFacebook} /></a>
-        <a href="https://www.instagram.com/beautyplexdz/"><FontAwesomeIcon icon={faInstagram} /></a>
+      <a id="social" href="https://www.facebook.com/profile.php?id=61550788340750"><FontAwesomeIcon icon={faFacebook} /></a>
+      <br></br>
+      <br></br>
+
+        <a id="social" href="https://www.instagram.com/beautyplexdz/"><FontAwesomeIcon icon={faInstagram} /></a>
       </div>
       
       

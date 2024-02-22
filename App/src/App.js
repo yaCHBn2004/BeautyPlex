@@ -10,7 +10,13 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      
+      <br></br>
+          <br></br>
+          <br></br>
+          <br></br><br></br>
+          <br></br>
+          <br></br>
+          <br></br>
         <Home />
           <br></br>
           <br></br>

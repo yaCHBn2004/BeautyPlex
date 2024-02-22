@@ -1,9 +1,11 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel,ValidationError 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 from fastapi.middleware.cors import CORSMiddleware
+from google.oauth2 import service_account
+from google.auth.transport.requests import Request
 
 app = FastAPI()
 
@@ -41,12 +43,11 @@ async def submit_form(user_info: UserInfo, product_info: ProductInfo):
 
     return {"message": "Form submitted successfully"}
 
-# Function to send email
 def send_email(user_info: UserInfo, product_info: ProductInfo):
     smtp_host = 'smtp.gmail.com'
     smtp_port = 587
     smtp_user = 'beautyplex00@gmail.com'
-    smtp_pass = 'passwordacil'
+    smtp_pass = 'bmqn nydx ugvr smjl'  
     sender_email = smtp_user
     receiver_email = 'beautyplex00@gmail.com'  
     
@@ -74,4 +75,4 @@ def send_email(user_info: UserInfo, product_info: ProductInfo):
     with smtplib.SMTP(smtp_host, smtp_port) as server:
         server.starttls()
         server.login(smtp_user, smtp_pass)
-        server.send_message(message)
+        server.sendmail(sender_email, receiver_email, message.as_string())

@@ -23,7 +23,7 @@ const ProductItem = ({ productItem, key }) => {
         </div>
         <div className="desc">
           <h1>{productItem.title}</h1>
-          <p>Prix habituel : {productItem.price} DZD</p>
+          <p>Prix habituel : {productItem.price} DA</p>
         </div>
       </button>
     </div>

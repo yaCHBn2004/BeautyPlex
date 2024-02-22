@@ -9,18 +9,25 @@
 body {
   box-sizing: border-box;
   margin: auto;
-  
+  overflow-x: hidden;
 }
 
 * {
   font-family: "Roboto", sans-serif;
+  
 }
 
 /* --------------------------------------navbar------------------------------------------------------------- */
 .navC {
+  position: fixed;
   display: flex;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
   padding: 10px;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .lien {
@@ -37,7 +44,7 @@ body {
   align-items: center;
 }
 
-a {
+.navC a {
   text-decoration: none;
   height: fit-content;
   width: 100%;
@@ -56,7 +63,7 @@ li {
   justify-content: center;
 }
 
-a:hover {
+.lien a:hover {
   background-color: #922053;
   color: white;
 }
@@ -65,6 +72,8 @@ a:hover {
   max-height: 70px;
   min-height: 40px;
 }
+
+
 
  .res-nav  {
   height: 26px;
@@ -104,7 +113,7 @@ a:hover {
   border-radius: inherit;
 }
 
-.active a {
+.navC .active a {
   background-color: #6c2243;
   color: white;
 }
@@ -209,7 +218,7 @@ a:hover {
   .Home .Left h3 {
     font-size: 10px;
   }
-
+  
   .Home .Right img {
     height: 400px;
   }
@@ -258,6 +267,7 @@ a:hover {
   width: 80vw;
 }
 
+
 .Left {
   flex: 6;
   display: flex;
@@ -269,7 +279,9 @@ a:hover {
   display: flex;
   justify-content: flex-end;
 }
-
+#hh{
+  text-decoration: none;
+}
 .Left * {
   margin: 20px;
 }
@@ -289,35 +301,40 @@ a:hover {
 .Left h2 {
   color: #221e20;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   font-size: 20px;
 }
 
 .Left h3 {
   color: #221e20;
-  font-size: 12px;
+  font-size: 15px;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
 }
+
 
 #ExploreProduct {
   background-color: #6c2243;
   font-size: 15px;
+  padding: 20px;
   color: white;
-  height: 50px;
-  width: 200px;
   border: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0px 38px;
+}
+#ExploreProduct:hover {
+  padding: 20px;
+  background-color: #3260a1;
+  font-size: 15px;
+  color: rgb(250, 250, 250);
+  border: none;
+  cursor: pointer;
   border-radius: 0px 38px;
 }
 
-#ExploreProduct:hover {
-  background-color: #922053;
-  font-weight: 700;
-  padding: 5px;
-  transition: background-color 0.4s ease;
-}
 
 /* --------------------------------------product ------------------------------------------------------------- */
 
@@ -348,6 +365,10 @@ a:hover {
   font-weight: 700;
   font-style: normal;
 }
+.ProductItem:hover{
+  background-color: #ffffff;
+box-shadow: 20px 20px 20px  #07262623;
+}
 
 .ProductItem P {
   font-size: 12px;
@@ -361,6 +382,7 @@ a:hover {
 #ProductImg {
   width: 100%;
   height: auto;
+  cursor: pointer;
   border-radius: 10px 10px 0px 0px;
 }
 
@@ -392,10 +414,7 @@ a:hover {
   margin: 0px;
 }
 
-#ClickProduct:hover {
-  background-color: #ffffff;
-  box-shadow: 2px 2px 20px #6efefe23;
-}
+
 
 /* --------------------------------------Order Form------------------------------------------------------------- */
 
@@ -414,6 +433,9 @@ a:hover {
   align-items: center;
   justify-content: center;
   width: 100;
+}
+.Form button{
+  cursor: pointer;
 }
 
 .Form form {
@@ -470,38 +492,73 @@ a:hover {
 .Form .ProductItem p {
   color: red;
 }
-.footer{
-  gap: 20%;
-  padding: 20px;
+.footer {
+  gap: 15%;
+  padding: 2%;
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: #6C2243;
+  background-color: #6c2243;
   color: white;
-  height: 280px;
-  width: 100%;
 }
-/* ------------foter ------------------*/
-.footer ul{
+
+.footer ul {
   display: flex;
-  color: white;
   flex-direction: column;
   gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
-
 }
 
-.footer a{
-  color: white;
-  list-style: none;
-  text-align: right;
+.footer ul li {
+  min-width: 110px;
+}
+
+.footer a {
+  font-size: 17px;
+  color: #f0f2f3;
   text-decoration: none;
   cursor: pointer;
- 
+  font-weight: 300;
+
+}
+.footer a:hover {
+  color: #015699;
+
 }
 
+.footer h1 {
+  color: white;
+  font-weight: 500;
+}
+.footer h4{
+  font-weight: 300;
 
+}
 
+#social {
+  font-size: x-large;
 
+}
+#social:hover{
+  color: #015699;
+}
+
+/* Media Query for Responsive Styling */
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+    height: auto; /* Auto height based on content */
+  }
+
+  .footer ul {
+    margin-bottom: 20px; /* Add space between lists */
+  }
+
+  .footer ul li {
+    min-width: auto; /* Allow items to shrink */
+  }
+}
