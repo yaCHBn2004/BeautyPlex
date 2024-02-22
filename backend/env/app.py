@@ -45,10 +45,10 @@ async def submit_form(user_info: UserInfo, product_info: ProductInfo):
 def send_email(user_info: UserInfo, product_info: ProductInfo):
     smtp_host = 'smtp.gmail.com'
     smtp_port = 587
-    smtp_user = 'f_adjissi@estin.dz'
-    smtp_pass = 'sama7niyaraby'
+    smtp_user = 'beautyplex00@gmail.com'
+    smtp_pass = 'passwordacil'
     sender_email = smtp_user
-    receiver_email = 'f_adjissi@estin.dz'  
+    receiver_email = 'beautyplex00@gmail.com'  
     
     message = MIMEMultipart()
     message['From'] = sender_email
