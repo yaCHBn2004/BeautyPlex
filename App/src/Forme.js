@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import toast from "react-hot-toast";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Nav from "./Nav"; 
 import Footer from "./Footer";
 
@@ -9,6 +10,7 @@ const cities = [
 ];
 
 const Forme = () => {
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNum, setPhoneNumber] = useState("");
@@ -17,7 +19,7 @@ const Forme = () => {
   const [productTitle, setProductTitle] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [imgUrl, setImgUrl] = useState("");
-  const [loading, setLoading] = useState(false); // State variable for loading indicator
+  const [loading, setLoading] = useState(false); 
 
   useEffect(() => {
     const storedProductInfo = localStorage.getItem("productInfo");
@@ -31,7 +33,7 @@ const Forme = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Start loading indicator
+    setLoading(true); 
     try {
       const formData = {
         user_info: {
@@ -53,7 +55,7 @@ const Forme = () => {
       );
       console.log("Form submitted successfully:", response.data);
       localStorage.removeItem("productInfo");
-      toast.success("E-mail envoyé avec succès ");
+      toast.success("E-mail envoyé avec succès");
       setBaladiya("");
       setCity("");
       setEmail("");
@@ -61,7 +63,7 @@ const Forme = () => {
       setName("");
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast.error("Envoi échoué ");
+      toast.error("Envoi échoué");
     } finally {
       setLoading(false); // Stop loading indicator
     }
@@ -71,9 +73,10 @@ const Forme = () => {
     <>
       <Nav />
       <br></br>
-          <br></br>
-          <br></br>
-          <br></br><br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="Form">
         <div className="ProductItem">
           <div className="img">
@@ -146,6 +149,17 @@ const Forme = () => {
         </form>
       </div>
       <Footer />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 };
